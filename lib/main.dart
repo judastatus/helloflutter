@@ -1,5 +1,10 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
-import 'model/post.dart';
+import 'package:helloflutter/demo/bottom_navigation_bar_demo.dart';
+import 'package:helloflutter/demo/drawer_demo.dart';
+import 'demo/listview_demo.dart';
+import 'demo/hello_demo.dart';
 
 void main() {
   runApp(App());
@@ -9,64 +14,73 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Home(),
-      theme: ThemeData(primarySwatch: Colors.yellow),
+      theme: ThemeData(
+          primarySwatch: Colors.yellow,
+          highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+          splashColor: Colors.white70),
     );
   }
 }
 
 class Home extends StatelessWidget {
-  Widget _listItemBuilder(BuildContext context, int index) {
-    return Container(
-      color: Colors.white,
-      margin: EdgeInsets.all(8.0),
-      child: Column(
-        children: <Widget>[
-          Image.network(posts[index].imageUrl),
-          SizedBox(
-            height: 16.0,
-          ),
-          Text(
-            posts[index].title,
-            style: Theme.of(context).textTheme.headline6,
-          ),
-          Text(
-            posts[index].author,
-            style: Theme.of(context).textTheme.subtitle1,
-          ),
-          SizedBox(
-            height: 16.0,
-          )
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[100],
-      appBar: AppBar(
-        title: Text('hello'),
-        elevation: 0.1,
-      ),
-      body: ListView.builder(
-        itemBuilder: _listItemBuilder,
-        itemCount: posts.length,
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          // leading: IconButton(
+          //   icon: Icon(Icons.menu),
+          //   tooltip: Navigator.defaultRouteName,
+          //   onPressed: () => debugPrint('navigation left button is pressed'),
+          // ),
+          title: Text('Hello'),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.search),
+              tooltip: Navigator.defaultRouteName,
+              onPressed: () =>
+                  debugPrint('navigation right button search is pressed'),
+            )
+          ],
+          elevation: 0.1,
+          bottom: TabBar(
+            unselectedLabelColor: Colors.black38,
+            indicatorColor: Colors.red,
+            indicatorSize: TabBarIndicatorSize.label,
+            indicatorWeight: 2.0,
+            tabs: <Widget>[
+              Tab(
+                icon: Icon(Icons.local_activity),
+              ),
+              Tab(
+                icon: Icon(Icons.change_history),
+              ),
+              Tab(
+                icon: Icon(Icons.directions_bike),
+              )
+            ],
+          ),
+        ),
+        body: TabBarView(children: <Widget>[
+          ListViewDemo(),
+          Icon(
+            Icons.change_history,
+            size: 128,
+            color: Colors.black12,
+          ),
+          Icon(
+            Icons.directions_bike,
+            size: 128,
+            color: Colors.black12,
+          ),
+        ]),
+        drawer: DrawerDemo(),
+        bottomNavigationBar: BottomNavigationBarDemo(),
       ),
     );
-  }
-}
-
-class Hello extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-        child: Text(
-      'hello,this is flutter!',
-      textDirection: TextDirection.ltr,
-      style: TextStyle(
-          fontSize: 20, fontWeight: FontWeight.bold, color: Colors.yellow),
-    ));
   }
 }
