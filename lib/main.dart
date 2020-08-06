@@ -9,6 +9,7 @@ import 'package:helloflutter/demo/sliver_demo.dart';
 import 'package:helloflutter/demo/view_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/hello_demo.dart';
+import 'demo/navigator_demo.dart';
 
 void main() {
   runApp(App());
@@ -19,7 +20,12 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      // initialRoute: "/",
       home: Home(),
+      routes: {
+        // '/': (context) => NavigatorDemo(),
+        // '/about': (context) => SliverDemo()
+      },
       theme: ThemeData(
           primarySwatch: Colors.yellow,
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
