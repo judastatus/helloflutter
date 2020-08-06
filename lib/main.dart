@@ -5,6 +5,7 @@ import 'package:helloflutter/demo/basic_demo.dart';
 import 'package:helloflutter/demo/bottom_navigation_bar_demo.dart';
 import 'package:helloflutter/demo/drawer_demo.dart';
 import 'package:helloflutter/demo/layout_demo.dart';
+import 'package:helloflutter/demo/sliver_demo.dart';
 import 'package:helloflutter/demo/view_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/hello_demo.dart';
@@ -75,7 +76,8 @@ class Home extends StatelessWidget {
           ListViewDemo(),
           BasicDemo(),
           LayoutDemo(),
-          ViewDemo(),
+          // ViewDemo(),
+          SliverDemo()
         ]),
         drawer: DrawerDemo(),
         bottomNavigationBar: BottomNavigationBarDemo(),
