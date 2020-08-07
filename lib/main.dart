@@ -8,6 +8,7 @@ import 'package:helloflutter/demo/drawer_demo.dart';
 import 'package:helloflutter/demo/form_demo.dart';
 import 'package:helloflutter/demo/layout_demo.dart';
 import 'package:helloflutter/demo/sliver_demo.dart';
+import 'package:helloflutter/demo/state/state_demo.dart';
 import 'package:helloflutter/demo/view_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/hello_demo.dart';
@@ -22,13 +23,14 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/com",
+      initialRoute: "/state",
       // home: Home(),
       routes: {
         "/": (context) => Home(),
         '/about': (context) => ListViewDemo(),
         "/form": (context) => FormDemo(),
-        "/com": (context) => ComponentDemo()
+        "/com": (context) => ComponentDemo(),
+        "/state": (context) => StateManagementDemo()
       },
       theme: ThemeData(
           primarySwatch: Colors.yellow,
