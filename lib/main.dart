@@ -9,6 +9,7 @@ import 'package:helloflutter/demo/form_demo.dart';
 import 'package:helloflutter/demo/layout_demo.dart';
 import 'package:helloflutter/demo/sliver_demo.dart';
 import 'package:helloflutter/demo/state/state_demo.dart';
+import 'package:helloflutter/demo/stream/stream_demo.dart';
 import 'package:helloflutter/demo/view_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/hello_demo.dart';
@@ -23,14 +24,15 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/state",
+      initialRoute: "/stream",
       // home: Home(),
       routes: {
         "/": (context) => Home(),
         '/about': (context) => ListViewDemo(),
         "/form": (context) => FormDemo(),
         "/com": (context) => ComponentDemo(),
-        "/state": (context) => StateManagementDemo()
+        "/state": (context) => StateManagementDemo(),
+        "/stream": (context) => StreamDemo()
       },
       theme: ThemeData(
           primarySwatch: Colors.yellow,
