@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:helloflutter/demo/check_box_demo.dart';
+import 'package:helloflutter/demo/form_demo.dart';
+import 'package:helloflutter/demo/radio_demo.dart';
+import 'package:helloflutter/demo/slider_demo.dart';
+import 'package:helloflutter/demo/switch_demo.dart';
 import '../demo/floating_action_buttom_demo.dart';
 import '../demo/button_demo.dart';
+import '../demo/pop_menu_button_demo.dart';
+import '../demo/datetime_demo.dart';
 
 class ComponentDemo extends StatelessWidget {
   @override
@@ -12,6 +19,28 @@ class ComponentDemo extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'Date & Time', page: DateTimeDemo()),
+          ListItem(
+            title: "slider Demo",
+            page: SliderDemo(),
+          ),
+          ListItem(
+            title: "switch Demo",
+            page: SwitchDemo(),
+          ),
+          ListItem(
+            title: "radio Demo",
+            page: RadioDemo(),
+          ),
+          ListItem(
+            title: "Checkbox Demo",
+            page: CheckboxDemo(),
+          ),
+          ListItem(
+            title: "From",
+            page: FormDemo(),
+          ),
+          ListItem(title: 'PopupMenuButton', page: PopupMenuButtonDemo()),
           ListItem(title: 'Button', page: ButtonDemo()),
           ListItem(
               title: 'FloatingActionButton', page: FloatingActionButtonDemo()),
