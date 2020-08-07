@@ -7,6 +7,7 @@ import 'package:helloflutter/demo/component_demo.dart';
 import 'package:helloflutter/demo/drawer_demo.dart';
 import 'package:helloflutter/demo/form_demo.dart';
 import 'package:helloflutter/demo/layout_demo.dart';
+import 'package:helloflutter/demo/rxdart/rxdart_demo.dart';
 import 'package:helloflutter/demo/sliver_demo.dart';
 import 'package:helloflutter/demo/state/state_demo.dart';
 import 'package:helloflutter/demo/stream/stream_demo.dart';
@@ -24,7 +25,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/stream",
+      initialRoute: "/rxdart",
       // home: Home(),
       routes: {
         "/": (context) => Home(),
@@ -32,7 +33,8 @@ class App extends StatelessWidget {
         "/form": (context) => FormDemo(),
         "/com": (context) => ComponentDemo(),
         "/state": (context) => StateManagementDemo(),
-        "/stream": (context) => StreamDemo()
+        "/stream": (context) => StreamDemo(),
+        "/rxdart": (context) => RxDartDemo()
       },
       theme: ThemeData(
           primarySwatch: Colors.yellow,
