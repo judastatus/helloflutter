@@ -7,6 +7,7 @@ import 'package:helloflutter/demo/bottom_navigation_bar_demo.dart';
 import 'package:helloflutter/demo/component_demo.dart';
 import 'package:helloflutter/demo/drawer_demo.dart';
 import 'package:helloflutter/demo/form_demo.dart';
+import 'package:helloflutter/demo/http/http_demo.dart';
 import 'package:helloflutter/demo/layout_demo.dart';
 import 'package:helloflutter/demo/rxdart/rxdart_demo.dart';
 import 'package:helloflutter/demo/sliver_demo.dart';
@@ -27,7 +28,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/bloc",
+      initialRoute: "/http",
       // home: Home(),
       routes: {
         "/": (context) => Home(),
@@ -37,7 +38,8 @@ class App extends StatelessWidget {
         "/state": (context) => StateManagementDemo(),
         "/stream": (context) => StreamDemo(),
         "/rxdart": (context) => RxDartDemo(),
-        "/bloc": (context) => BlocDemo()
+        "/bloc": (context) => BlocDemo(),
+        "/http": (context) => HttpDemo()
       },
       theme: ThemeData(
           primarySwatch: Colors.yellow,
