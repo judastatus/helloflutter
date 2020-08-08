@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:helloflutter/demo/basic_demo.dart';
+import 'package:helloflutter/demo/bloc/bloc_demo.dart';
 import 'package:helloflutter/demo/bottom_navigation_bar_demo.dart';
 import 'package:helloflutter/demo/component_demo.dart';
 import 'package:helloflutter/demo/drawer_demo.dart';
@@ -15,6 +16,7 @@ import 'package:helloflutter/demo/view_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/hello_demo.dart';
 import 'demo/navigator_demo.dart';
+import 'demo/bloc/bloc_demo.dart';
 
 void main() {
   runApp(App());
@@ -25,7 +27,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/rxdart",
+      initialRoute: "/bloc",
       // home: Home(),
       routes: {
         "/": (context) => Home(),
@@ -34,7 +36,8 @@ class App extends StatelessWidget {
         "/com": (context) => ComponentDemo(),
         "/state": (context) => StateManagementDemo(),
         "/stream": (context) => StreamDemo(),
-        "/rxdart": (context) => RxDartDemo()
+        "/rxdart": (context) => RxDartDemo(),
+        "/bloc": (context) => BlocDemo()
       },
       theme: ThemeData(
           primarySwatch: Colors.yellow,
