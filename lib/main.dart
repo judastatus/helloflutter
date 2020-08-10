@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:helloflutter/demo/animation/animation_demo.dart';
 import 'package:helloflutter/demo/basic_demo.dart';
 import 'package:helloflutter/demo/bloc/bloc_demo.dart';
 import 'package:helloflutter/demo/bottom_navigation_bar_demo.dart';
@@ -28,7 +29,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/http",
+      initialRoute: "/animation",
       // home: Home(),
       routes: {
         "/": (context) => Home(),
@@ -39,7 +40,8 @@ class App extends StatelessWidget {
         "/stream": (context) => StreamDemo(),
         "/rxdart": (context) => RxDartDemo(),
         "/bloc": (context) => BlocDemo(),
-        "/http": (context) => HttpDemo()
+        "/http": (context) => HttpDemo(),
+        "/animation": (context) => AnimationDemo()
       },
       theme: ThemeData(
           primarySwatch: Colors.yellow,
